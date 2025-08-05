@@ -1,0 +1,28 @@
+function floor_rects_metric_inline_ir(csvfile)
+
+show_text = true;
+pix_to_m = 0.003175;
+
+csvfile = 'floor_overlay_labels.csv';
+
+T = readtable(csvfile, 'TextType', 'string');
+
+for k = 1:height(T)
+    x = T.x(k) * pix_to_m;
+    y = T.y(k) * pix_to_m;
+    w = T.width(k) * pix_to_m;
+    h = T.height(k) * pix_to_m;
+
+    rect_clr = .5*ones(1,3);
+    rectangle('Position', [x, y, w, h], ...
+        'EdgeColor', rect_clr, 'LineWidth', 1);
+
+    if show_text
+        text(x, y + h + 0.05, T.name(k), ...
+            'Color', [0 0 0], 'FontSize', 8, ...
+            'VerticalAlignment', 'bottom', ...
+            'HorizontalAlignment', 'left', ...
+            'Interpreter', 'none');
+    end
+end
+end
