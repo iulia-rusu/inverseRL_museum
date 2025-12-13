@@ -3,7 +3,7 @@ frames/
 images/
 mlp_runs/
 more_data_2025/
-museum.code-workspace/
+*.code-workspace
 miscellaneous/
 
 # junk?
