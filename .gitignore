@@ -1,0 +1,15 @@
+drop_model_movement/
+frames/
+images/
+mlp_runs/
+more_data_2025/
+museum.code-workspace/
+miscellaneous/
+
+# junk?
+.DS_Store
+
+# Data / artifacts
+*.pkl
+*.png
+stored_vars.pkl
